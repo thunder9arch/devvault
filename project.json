@@ -1,0 +1,22 @@
+{
+  "overview": "DevVault is a code snippet manager where developers can save, organize, search, and copy code snippets with language tagging, tags, dark/light mode, and a clean card-based UI.",
+  "features": [
+    "Add code snippets with title, language, tags, and code content",
+    "Delete snippets with confirmation",
+    "Live search and filter across all snippet fields",
+    "Copy-to-clipboard with visual feedback",
+    "Clean card-based UI with snippet preview",
+    "Modal popup for adding new snippets",
+    "Dark/Light mode toggle with localStorage persistence",
+    "Responsive layout for mobile, tablet, and desktop"
+  ],
+  "category": "productivity",
+  "tags": [
+    "code-snippets",
+    "developer-tools",
+    "productivity",
+    "snippet-manager",
+    "dark-mode"
+  ],
+  "last_updated": "2026-04-13T19:14:19.668Z"
+}

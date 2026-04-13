@@ -1,0 +1,22 @@
+// Version: 1.0.0
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type SnippetId__462650497 = Nat;
+type Snippet__576989592 =
+  {
+    code : Text;
+    createdAt : Int;
+    id : SnippetId__462650497;
+    language : Text;
+    tags : Text;
+    title : Text
+  };
+actor {
+  stable counter : {var nextId : Nat};
+  stable snippets :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Snippet__576989592]];
+      var elementIndex : Nat__490723111
+    }
+};

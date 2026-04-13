@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "General Sans", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.625rem;
+
+    --background: 0.97 0.005 270;
+    --foreground: 0.25 0.02 270;
+    --card: 0.99 0 0;
+    --card-foreground: 0.2 0.02 270;
+    --popover: 0.98 0 0;
+    --popover-foreground: 0.2 0.02 270;
+
+    --primary: 0.4 0.05 270;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.92 0.02 270;
+    --secondary-foreground: 0.3 0.02 270;
+    --muted: 0.92 0.01 0;
+    --muted-foreground: 0.55 0.01 0;
+
+    --accent: 0.65 0.12 180;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.01 270;
+    --input: 0.92 0.01 270;
+    --ring: 0.6 0.12 60;
+
+    --chart-1: 0.65 0.12 60;
+    --chart-2: 0.65 0.12 180;
+    --chart-3: 0.55 0.15 280;
+    --chart-4: 0.7 0.1 140;
+    --chart-5: 0.75 0.08 30;
+
+    --sidebar: 0.98 0.002 270;
+    --sidebar-foreground: 0.2 0.02 270;
+    --sidebar-primary: 0.4 0.05 270;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.92 0.02 270;
+    --sidebar-accent-foreground: 0.3 0.02 270;
+    --sidebar-border: 0.88 0.01 270;
+    --sidebar-ring: 0.6 0.12 60;
+  }
+
+  .dark {
+    --background: 0.09 0.01 270;
+    --foreground: 0.93 0.005 270;
+    --card: 0.15 0.01 270;
+    --card-foreground: 0.92 0.01 270;
+    --popover: 0.2 0.01 270;
+    --popover-foreground: 0.93 0.01 270;
+
+    --primary: 0.65 0.12 60;
+    --primary-foreground: 0.09 0 0;
+
+    --secondary: 0.22 0.01 270;
+    --secondary-foreground: 0.85 0.01 270;
+    --muted: 0.2 0.01 270;
+    --muted-foreground: 0.6 0.005 0;
+
+    --accent: 0.65 0.12 180;
+    --accent-foreground: 0.09 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.09 0 0;
+
+    --border: 0.25 0.01 270;
+    --input: 0.22 0.01 270;
+    --ring: 0.65 0.12 60;
+
+    --chart-1: 0.65 0.12 60;
+    --chart-2: 0.65 0.12 180;
+    --chart-3: 0.55 0.15 280;
+    --chart-4: 0.7 0.1 140;
+    --chart-5: 0.75 0.08 30;
+
+    --sidebar: 0.15 0.01 270;
+    --sidebar-foreground: 0.92 0.01 270;
+    --sidebar-primary: 0.65 0.12 60;
+    --sidebar-primary-foreground: 0.09 0 0;
+    --sidebar-accent: 0.22 0.01 270;
+    --sidebar-accent-foreground: 0.85 0.01 270;
+    --sidebar-border: 0.25 0.01 270;
+    --sidebar-ring: 0.65 0.12 60;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .elevated-card {
+    @apply bg-card text-card-foreground shadow-md rounded-lg border border-border;
+  }
+
+  .subtle-border {
+    @apply border-l border-border opacity-40;
+  }
+
+  .code-block {
+    @apply bg-muted/50 border border-border rounded-md p-3 font-mono text-sm text-foreground overflow-x-auto;
+  }
+
+  .button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md transition-smooth font-medium;
+  }
+
+  .button-secondary {
+    @apply bg-muted text-muted-foreground hover:bg-muted/80 px-4 py-2 rounded-md transition-smooth font-medium;
+  }
+
+  .button-icon {
+    @apply inline-flex items-center justify-center w-9 h-9 rounded-md hover:bg-muted/40 transition-smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

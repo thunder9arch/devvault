@@ -1,0 +1,15 @@
+type SnippetId = nat;
+type Snippet = 
+ record {
+   code: text;
+   createdAt: int;
+   id: SnippetId;
+   language: text;
+   tags: text;
+   title: text;
+ };
+service : {
+  addSnippet: (title: text, code: text, language: text, tags: text) -> (nat);
+  deleteSnippet: (id: nat) -> (bool);
+  getSnippets: () -> (vec Snippet) query;
+}
